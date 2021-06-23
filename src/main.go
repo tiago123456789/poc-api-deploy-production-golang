@@ -42,5 +42,8 @@ func main() {
 	})
 
 	port := os.Getenv("PORT")
+	if port == "" {
+		port = "9000" // Default port if not specified
+	}
 	log.Fatal(app.Listen(":" + port))
 }
