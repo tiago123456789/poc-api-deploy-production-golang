@@ -1,1 +1,1 @@
-web: poc-api-deploy-production-golang
+web: ./poc-api-deploy-production-golang
