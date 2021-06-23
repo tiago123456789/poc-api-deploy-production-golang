@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"log"
-	"os"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -41,9 +40,5 @@ func main() {
 		return c.SendString(msg) // => ✋ register
 	})
 
-	port := os.Getenv("PORT")
-	if port == "" {
-		port = "9000" // Default port if not specified
-	}
-	log.Fatal(app.Listen(":" + port))
+	log.Fatal(app.Listen(":3000"))
 }
