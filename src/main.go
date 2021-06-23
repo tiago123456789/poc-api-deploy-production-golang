@@ -6,9 +6,15 @@ import (
 	"os"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/joho/godotenv"
 )
 
 func main() {
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
+
 	app := fiber.New()
 
 	// GET /john
@@ -41,6 +47,6 @@ func main() {
 		return c.SendString(msg) // => ✋ register
 	})
 
-	port := os.Getenv(("PORT"))
+	port := os.Getenv("PORT")
 	log.Fatal(app.Listen(":" + port))
 }
