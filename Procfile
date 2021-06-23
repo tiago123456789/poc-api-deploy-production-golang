@@ -1,0 +1,1 @@
+web: bin/poc-api-deploy-production-golang
