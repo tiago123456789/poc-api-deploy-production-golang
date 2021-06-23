@@ -23,5 +23,11 @@ jobs:
         echo "PORT=80" > .env
     
     - name: Build
-      run: go build -o poc-api-deploy-production-golang ./src/  
+      run: go build -o poc-api-deploy-production-golang ./src/
+    
+    - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+      with:
+        heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+        heroku_app_name: "afternoon-hollows-12520" #Must be unique in Heroku
+        heroku_email: ${{ secrets.EMAIL }}
 
