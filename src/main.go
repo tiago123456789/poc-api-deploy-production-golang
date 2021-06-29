@@ -18,7 +18,7 @@ func main() {
 
 	// GET /john
 	app.Get("/:name", func(c *fiber.Ctx) error {
-		msg := fmt.Sprintf("UPDATE USING SECRETS GITHUB Hello, %s 👋!", c.Params("name"))
+		msg := fmt.Sprintf("%s Hello, %s 👋!", os.Getenv("TEXT"), c.Params("name"))
 		return c.SendString(msg) // => Hello john 👋!
 	})
 

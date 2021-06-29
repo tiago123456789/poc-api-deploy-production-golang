@@ -1,6 +1,7 @@
 setup:
   config:
     PORT: ${{ secrets.PORT }}
+    TEXT: ${{ secrets.TEXT }}
 
 build:
   docker:
