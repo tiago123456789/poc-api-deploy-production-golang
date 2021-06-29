@@ -12,7 +12,6 @@ COPY go.sum .
 RUN go mod download
 
 COPY . .
-COPY .env .
 
 # Build the Go app
 RUN go build -o ./out/go-sample-app ./src
