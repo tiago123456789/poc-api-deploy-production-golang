@@ -1,3 +1,7 @@
+setup:
+  config:
+    PORT: 8000
+
 build:
   docker:
     web: Dockerfile
