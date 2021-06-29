@@ -15,10 +15,10 @@ func main() {
 	// }
 
 	app := fiber.New()
-
+	fmt.Println(os.Getenv("TEXT"))
 	// GET /john
 	app.Get("/:name", func(c *fiber.Ctx) error {
-		msg := fmt.Sprintf("%s Hello, %s 👋!", os.Getenv("TEXT"), c.Params("name"))
+		msg := fmt.Sprintf("Hello, %s 👋!", c.Params("name"))
 		return c.SendString(msg) // => Hello john 👋!
 	})
 
