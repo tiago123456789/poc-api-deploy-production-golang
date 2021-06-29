@@ -1,6 +1,6 @@
 setup:
   config:
-    PORT: 8000
+    PORT: ${{ secrets.PORT }}
 
 build:
   docker:
