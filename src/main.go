@@ -19,7 +19,7 @@ func main() {
 
 	// GET /john
 	app.Get("/:name", func(c *fiber.Ctx) error {
-		msg := fmt.Sprintf("UPDATED Hello, %s 👋!", c.Params("name"))
+		msg := fmt.Sprintf("RUNNING IN DOCKER WITHIN HEROKU Hello, %s 👋!", c.Params("name"))
 		return c.SendString(msg) // => Hello john 👋!
 	})
 
